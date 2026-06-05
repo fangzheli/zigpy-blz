@@ -27,9 +27,10 @@ LOGGER = logging.getLogger(__name__)
 
 class ControllerApplication(zigpy.application.ControllerApplication):
     """ControllerApplication for BouffaloLab BLZ protocol based adapters."""
-    _probe_config_variants = [
+    _probe_configs = [
         {zigpy.config.CONF_DEVICE_BAUDRATE: 2000000},
     ]
+    _probe_config_variants = _probe_configs
     
     _watchdog_period: int = 60
 
